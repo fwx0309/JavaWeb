@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        // 方式一
+        function test(a){
+          alert(a)
+        }
+        test(1)
+
+        // 方式二
+        var test1 = function (a){
+            alert(a)
+            // 隐形参数 arguments
+            alert(arguments[1])
+            alert(arguments[2])
+        }
+        test1(2,3,4)
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

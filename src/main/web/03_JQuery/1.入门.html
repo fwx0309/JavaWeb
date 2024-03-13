@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="script/jquery-1.7.2.js"></script>
+    <script type="text/javascript">
+        // js 原生方式
+        /*window.onload = function (){
+            var btnObj = document.getElementById("btn")
+            btnObj.onclick = function (){
+                alert("js 原生方式")
+            }
+        }*/
+
+        // JQuery 方式
+        $(function (){
+            var $btn = $("#btn")
+            $btn.click(function (){
+                alert("JQuery 方式")
+            })
+        })
+    </script>
+</head>
+<body>
+<button type="button" id="btn">按钮</button>
+</body>
+</html>

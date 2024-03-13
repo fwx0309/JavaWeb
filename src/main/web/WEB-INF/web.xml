@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+    <context-param>
+        <param-name>username</param-name>
+        <param-value>fwx</param-value>
+    </context-param>
+    <context-param>
+        <param-name>age</param-name>
+        <param-value>18</param-value>
+    </context-param>
+
+
+    <servlet>
+        <servlet-name>helloservlet</servlet-name>
+        <servlet-class>org.fwx.d02_servlet.D1HelloServlet</servlet-class>
+
+        <init-param>
+            <param-name>username</param-name>
+            <param-value>root</param-value>
+        </init-param>
+        <init-param>
+            <param-name>mysql</param-name>
+            <param-value>jdbc:mysql://localhost:3306</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>helloservlet</servlet-name>
+        <url-pattern>/hello</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>getpost</servlet-name>
+        <servlet-class>org.fwx.d02_servlet.D2GetOrPostServlet</servlet-class>
+
+        <init-param>
+            <param-name>username</param-name>
+            <param-value>root</param-value>
+        </init-param>
+        <init-param>
+            <param-name>mysql</param-name>
+            <param-value>jdbc:mysql://localhost:3306</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>getpost</servlet-name>
+        <url-pattern>/getpost</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>d3HttpServletRequest</servlet-name>
+        <servlet-class>org.fwx.d02_servlet.D3HttpServletRequest</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>d3HttpServletRequest</servlet-name>
+        <url-pattern>/hsr</url-pattern>
+    </servlet-mapping>
+
+    <!--  dispatcher  -->
+    <servlet>
+        <servlet-name>d4Servlet1</servlet-name>
+        <servlet-class>org.fwx.d02_servlet.d4dispatcher.D4Servlet1</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>d4Servlet1</servlet-name>
+        <url-pattern>/d4Servlet1</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>d4Servlet2</servlet-name>
+        <servlet-class>org.fwx.d02_servlet.d4dispatcher.D4Servlet2</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>d4Servlet2</servlet-name>
+        <url-pattern>/d4Servlet2</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>D5ResponseServlet</servlet-name>
+        <servlet-class>org.fwx.d02_servlet.D5ResponseServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>D5ResponseServlet</servlet-name>
+        <url-pattern>/d5ResponseServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>D6Response1</servlet-name>
+        <servlet-class>org.fwx.d02_servlet.d6redirect.D6Response1</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>D6Response1</servlet-name>
+        <url-pattern>/d6Response1</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>D6Response2</servlet-name>
+        <servlet-class>org.fwx.d02_servlet.d6redirect.D6Response2</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>D6Response2</servlet-name>
+        <url-pattern>/d6Response2</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>D7Cookie</servlet-name>
+        <servlet-class>org.fwx.d02_servlet.D7Cookie</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>D7Cookie</servlet-name>
+        <url-pattern>/d7Cookie</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>D8Session</servlet-name>
+        <servlet-class>org.fwx.d02_servlet.D8Session</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>D8Session</servlet-name>
+        <url-pattern>/d8Session</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>D9JQueryAjax</servlet-name>
+        <servlet-class>org.fwx.d02_servlet.D9JQueryAjax</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>D9JQueryAjax</servlet-name>
+        <url-pattern>/d9JQueryAjax</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>D10FormUpload</servlet-name>
+        <servlet-class>org.fwx.d02_servlet.D10FormUpload</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>D10FormUpload</servlet-name>
+        <url-pattern>/d10FormUpload</url-pattern>
+    </servlet-mapping>
+</web-app>

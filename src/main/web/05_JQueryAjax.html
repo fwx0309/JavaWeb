@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="js/jquery-1.7.2.js"></script>
+    <script type="text/javascript">
+        $(function (){
+
+            $("#btn").click(function (){
+                $.ajax({
+                    type: "get",
+                    url: "http://localhost:8080/JavaWeb/d9JQueryAjax",
+                    data: "name=fwx",
+                    success: function (msg){
+                        alert(msg)
+                        $("body").text(JSON.stringify(msg))
+                    },
+                    dataType:"json"
+                })
+            })
+
+            // $.ajax({
+            //     type: "get",
+            //     url: "http://localhost:8080/JavaWeb/d9JQueryAjax",
+            //     data: "name=John&location=Boston",
+            //     success: function(msg){
+            //         alert( "Data Saved: " + msg );
+            //     }
+            // });
+
+        })
+    </script>
+</head>
+<body>
+    <input type="button" id="btn" value="按钮">
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        // json的定义
+        var jsonObj = {
+            "key1":12,
+            "key2":"abc",
+            "key3":true,
+            "key4":[11,"arr",false],
+            "key5":{
+                "key5_1" : 551,
+                "key5_2" : "key5_2_value"
+            },
+            "key6":[{
+                "key6_1_1":6611,
+                "key6_1_2":"key6_1_2_value"
+            },{
+                "key6_2_1":6621,
+                "key6_2_2":"key6_2_2_value"
+            }]
+        };
+
+        var jsonStr = JSON.stringify(jsonObj)
+        console.log("---- jsonStr ----")
+        console.log(jsonStr)
+
+        var parse = JSON.parse(jsonStr);
+        console.log("---- jsonStr ----")
+        console.log(parse)
+    </script>
+</head>
+<body>
+
+</body>
+</html>

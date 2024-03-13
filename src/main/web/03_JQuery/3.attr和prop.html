@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="script/jquery-1.7.2.js"></script>
+    <script type="text/javascript">
+        $(function (){
+
+            // attr 可以操作自定义属性，如：abc="abc"
+            // 如果标签不存在的属性，就会返回undefind
+            // alert($(":checkbox:first").attr("checked")) //获取
+            // $(":checkbox:last").attr("checked","checked") //设置
+
+            // prop 获取不存在的属性，显示false
+            // alert($(":checkbox:last").prop("checked"))
+            // $(":checkbox:last").prop("checked","true")
+
+            // each
+            // $(":checkbox").each(function (){
+            //     alert(this.checked)
+            // })
+
+            // 所有 checkbox 点击时的动作
+            $(":checkbox").click(function (){
+                alert(this.checked)
+            })
+        })
+    </script>
+</head>
+<body>
+    <input name="checkbox" type="checkbox" checked="checked" value="checkbox1" />checkbox1
+    <input name="checkbox" type="checkbox" value="checkbox2" />checkbox2
+    <input name="checkbox" type="checkbox" value="checkbox3" />checkbox3
+</body>
+</html>

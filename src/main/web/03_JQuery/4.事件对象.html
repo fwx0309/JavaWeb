@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="script/jquery-1.7.2.js"></script>
+    <script type="text/javascript">
+        $(function (){
+            // event 为自定义名字
+            $("div").bind("mouseover mouseout",function (event){
+                if (event.type == "mouseover") {
+                    console.log("mouseover")
+                } else {
+                    console.log("mouseout")
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+  <div>测试事件对象</div>
+</body>
+</html>
