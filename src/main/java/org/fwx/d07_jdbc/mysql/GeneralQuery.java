@@ -32,7 +32,8 @@ public class GeneralQuery {
         ResultSet rs = null;
 
         try {
-            connection = JdbcUtils.getConnection();
+//            connection = JdbcUtils.getConnection();
+            connection = JdbcUtils.getConnectionByDruid();
 
             ps = connection.prepareStatement(sql);
             // 设置预编译 sql 的参数

@@ -1,5 +1,8 @@
 package org.fwx.d07_jdbc.mysql;
 
+import com.alibaba.druid.pool.DruidDataSourceFactory;
+
+import javax.sql.DataSource;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.*;
@@ -13,6 +16,28 @@ import java.util.Properties;
  * @Version 1.0
  */
 public class JdbcUtils {
+
+    /**
+     * 获取 druid 连接池
+     * @return
+     * @throws Exception
+     */
+    public static DataSource getDataSource() throws Exception {
+        Properties properties = new Properties();
+        InputStream is = ClassLoader.getSystemClassLoader().getResourceAsStream("druid.properties");
+        properties.load(is);
+        DataSource dataSource = DruidDataSourceFactory.createDataSource(properties);
+        return dataSource;
+    }
+
+    /**
+     * 获取从 druid 连接池中获取数据连接
+     * @return
+     * @throws Exception
+     */
+    public static Connection getConnectionByDruid() throws Exception {
+        return getDataSource().getConnection();
+    }
 
     /**
      * 获取数据库连接
