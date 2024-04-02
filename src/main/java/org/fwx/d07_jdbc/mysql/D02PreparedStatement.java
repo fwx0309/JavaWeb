@@ -98,4 +98,40 @@ public class D02PreparedStatement {
         JdbcUtils.close(preparedStatement);
         JdbcUtils.close(connection);
     }
+
+    /**
+     * 没有事务控制，操作两个数据
+     */
+    @Test
+    public void generalUpdateTest(){
+        int num = 100;
+        GeneralUpdate.update("UPDATE user_table SET balance=balance-? WHERE `user`=?;",num,"AA");
+        // int a = 1/0;
+        GeneralUpdate.update("UPDATE user_table SET balance=balance+? WHERE `user`=?;",num,"BB");
+    }
+
+    /**
+     * 有事务控制，操作两个数据
+     */
+    @Test
+    public void generalUpdateTxTest() {
+        Connection connection = null;
+        try {
+            connection = JdbcUtils.getConnection();
+            int num = 100;
+            GeneralUpdate.updateTx(connection,"UPDATE user_table SET balance=balance-? WHERE `user`=?;",num,"AA");
+            // int a = 1/0;
+            GeneralUpdate.updateTx(connection,"UPDATE user_table SET balance=balance+? WHERE `user`=?;",num,"BB");
+            connection.commit();
+        } catch (Exception e) {
+            try {
+                connection.rollback();
+            } catch (SQLException ex) {
+                e.printStackTrace();
+            }
+            e.printStackTrace();
+        } finally {
+            JdbcUtils.close(connection);
+        }
+    }
 }
