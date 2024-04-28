@@ -9,5 +9,5 @@
         mysql、dbutils
     8、java8
         lambda、stream
-    9、添加 DruidStatView，访问页面可以打开，并看到连接池的信息，但是sql执行监控好像有问题 todo
+    9、添加 DruidStatView，servlet项目好像只能打开访问页面，无法监控
 
