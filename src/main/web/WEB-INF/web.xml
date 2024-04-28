@@ -139,4 +139,24 @@
         <servlet-name>D10FormUpload</servlet-name>
         <url-pattern>/d10FormUpload</url-pattern>
     </servlet-mapping>
+
+    <!-- 测试druid连接池 -->
+    <servlet>
+        <servlet-name>druidIndex</servlet-name>
+        <servlet-class>org.fwx.d02_servlet.D11DruidIdex</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>druidIndex</servlet-name>
+        <url-pattern>/druidIdnex</url-pattern>
+    </servlet-mapping>
+
+    <!-- druid 监控页面 -->
+    <servlet>
+        <servlet-name>DruidStatView</servlet-name>
+        <servlet-class>com.alibaba.druid.support.http.StatViewServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DruidStatView</servlet-name>
+        <url-pattern>/druid/*</url-pattern>
+    </servlet-mapping>
 </web-app>
